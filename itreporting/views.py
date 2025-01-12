@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Issue
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.models import User
 import requests
+from products.forms import ContactForm
 
 # Create your views here.
 
@@ -55,6 +56,21 @@ def report(request):
 
     # Render the report.html template with the context
     return render(request, 'itreporting/report.html', context)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            pass
+            return redirect('success')
+    else:
+        form = ContactForm()
+    return render(request, 'itreporting/contact.html', {'form': form})
+
+
+def success(request):
+  return render(request, 'itreporting/success.html')
 
 class PostListView(ListView):
     model = Issue
@@ -114,3 +130,4 @@ class UserPostListView(ListView):
         user=get_object_or_404(User, username=self.kwargs.get('username'))
 
         return Issue.objects.filter(author=user).order_by('-date_submitted')
+    

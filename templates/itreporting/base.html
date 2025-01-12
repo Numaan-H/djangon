@@ -19,7 +19,7 @@
         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
                 <div class="container">
-                <a><img src="Caterham.jpg" href="{% url 'itreporting:home' %}"></a>
+                <img src="https://www.logo-designer.co/storage/2014/01/Caterham-Group-logo-design-rebrand.jpg" width="75" height="50">
                 <a class="navbar-brand mr-4" href="{% url 'itreporting:home' %}">Caterham</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +27,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
-                        <a class="nav-item nav-link" href="#">Report</a>
-                        <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
+                        <a class="nav-item nav-link" href="{% url 'product' %}">Products</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:report' %}">View Reported Issues</a>
                         <a class="nav-item nav-link" href="{% url 'itreporting:issue-create' %}">Report New Issue</a>
                         
@@ -82,13 +80,89 @@
                     <h3>Note</h3>
                     <p class='text-muted'>For admin login, please click here.
                       <ul class="list-group">
-                        <li class="list-group-item list-group-item-light" href="{ % url 'admin/login/?next=/admin/' % '}">Admin login</li>
+                        <a class="nav-item nav-link" href="{% url 'admin:index' %}">Admin login</a>
                       </ul>
                     </p>
                   </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer
+            class="text-center text-lg-start text-white"
+            style="background-color: #177500a9"
+            >
+      <!-- Section: Social media -->
+      <section
+               class="d-flex justify-content-between p-4"
+               style="background-color: #177500"
+               >
+        <!-- Left -->
+        <div class="me-5">
+          <span>All rights reserved </span>
+        </div>
+        <!-- Left -->
+  
+      </section>  
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">Caterham Electronics</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #000000; height: 2px"
+                  />
+              <p>
+                All products appearing in this work are fictitious. Any resemblance to real products,
+                living or dead, is purely coincidental.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact Us</a>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #000000; height: 2px"
+                  />
+              <p><i class="fas fa-home mr-3"></i>62 West Wallaby Street, Wigan, Lancashire</p>
+              <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+              <p><i class="fas fa-print mr-3"></i> + 44 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+           >MDBootstrap.com</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  
+  </div>
+  <!-- End of .container -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

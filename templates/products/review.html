@@ -1,0 +1,20 @@
+{% extends "itreporting/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Submit Review{% endblock %}
+ 
+{% block content %}
+    <div class="content-section">
+        <form method="POST" class="border p-4">
+            {% csrf_token %}
+            <fieldset class="mb-4">
+            <legend class="border-bottom mb-4"><h2>Review</h2></legend>
+                    {{ form | crispy }}
+            </fieldset>
+            <div class="row">
+            <div class="col">
+            <button class="btn btn-primary w-100" type="submit">Submit</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

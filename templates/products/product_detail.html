@@ -1,0 +1,37 @@
+{% extends "itreporting/base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }} - Product Detail</title>
+</head>
+<body>
+    <h1>{{ product.name }} - Product Detail</h1>
+    
+    <div>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    </div>
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.cost }}</p>
+    
+    {% if reviews %}
+
+        {% for review in reviews %}
+                <div class="card mb-3">
+                <div class="card-body">
+                <p class="card-text">Name: {{ review.author }}</p>
+                <p class="card-text">{{ review.content }} - Rating: {{ review.rate }}</p>
+                <p class="card-text"><small class="text-muted">Posted on: {{ review.created_at|date:"M d, Y"}}</small></p>
+                </div>
+                </div>
+            {% empty %}
+                <p class="card-text">No reviews available</p>
+        {% endfor %}
+    {% endif %}
+    <a class="btn btn-info" href="{% url 'add_review' product_id=product.id %}">Add Review</a>
+                  
+    <a href="{% url 'product' %}">Back to Product List</a>
+</body>
+
+{% endblock %}
